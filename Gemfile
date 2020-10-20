@@ -10,8 +10,8 @@ gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
 # API
 gem 'bcrypt', '~> 3.1.7'
-gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'jwt', '~> 2.2', '>= 2.2.2'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 # gem 'jbuilder', '~> 2.5'
 
 # cache
