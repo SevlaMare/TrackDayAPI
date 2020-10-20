@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   let(:user) { User.new }
   let(:user1) { User.create(name: 'first', email: 'first@email.com', password: 'abc123') }
   let(:user2) { User.create(name: 'second', email: 'second@email.com', password: 'abc123') }
-  # let(:friend1) { user1.friendships.create(friend_id: 2) }
+  let(:measurement1) { user1.measurements.create(friend_id: 2) }
   # let(:post1) { user1.posts.create(content: 'abc') }
 
   context 'Model' do
