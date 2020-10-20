@@ -1,4 +1,4 @@
 class Metric < ApplicationRecord
-  has_many :measurements
-  has_many :users, through: :measurements
+  belongs_to :user
+  belongs_to :measurement
 end

@@ -1,18 +1,18 @@
 class User < ApplicationRecord
-  has_many :measurements # , dependent: :destroy
-  has_many :metrics, through: :measurements
+  has_many :metrics # , dependent: :destroy
+  has_many :measurements, through: :metrics
 
-  EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :name,
-    presence: true,
-    uniqueness: true,
-    length: { in: 3..12 }
+            presence: true,
+            uniqueness: true,
+            length: { in: 3..12 }
 
+  EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
   validates :email,
-    presence: true,
-    length: { in: 5..27 },
-    uniqueness: { case_sensitive: false },
-    format: { with: EMAIL_REGEX, on: :create }
+            presence: true,
+            length: { in: 5..27 },
+            uniqueness: { case_sensitive: false },
+            format: { with: EMAIL_REGEX, on: :create }
 
   validates :password, presence: true, length: { in: 5..27 }
 end

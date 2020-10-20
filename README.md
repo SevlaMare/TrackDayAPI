@@ -1,7 +1,7 @@
 # Track Day API
 > This is the backend to track day app.
 
-![screenshot](doc/screenshot.png)
+![screenshot](doc/ERD.png)
 
 <br>A full featured API.<br>
 

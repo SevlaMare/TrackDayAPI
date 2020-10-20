@@ -1,4 +1,6 @@
 class Measurement < ApplicationRecord
-  belongs_to :user
-  belongs_to :metric
+  has_many :metrics
+  has_many :users, through: :metrics
+
+  has_many :measures
 end

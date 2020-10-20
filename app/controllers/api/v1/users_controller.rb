@@ -1,8 +1,7 @@
 class Api::V1::UsersController < ApplicationController
-
   # TODO: remove, test only
   def index
-    @users  = User.all
+    @users = User.all
 
     render json: @users, status: :ok
   end
