@@ -9,8 +9,8 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
 # API
-gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'bcrypt', '~> 3.1.7'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'jwt', '~> 2.2', '>= 2.2.2'
 # gem 'jbuilder', '~> 2.5'
 
@@ -22,8 +22,8 @@ group :development do
   gem 'rubocop', '~> 0.93.1'
 
   # traceback
-  gem 'binding_of_caller', '~> 0.8.0'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'binding_of_caller', '~> 0.8.0'
 
   # debug
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -40,4 +40,4 @@ group :test do
 end
 
 # Windows
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
