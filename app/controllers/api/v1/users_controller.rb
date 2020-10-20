@@ -15,6 +15,12 @@ class Api::V1::UsersController < ApplicationController
     render json: @user, status: :created
   end
 
+  def show
+    @user = User.find(params[:id])
+
+    @measurements = @user.measurements
+  end
+
   private
 
   def user_params
