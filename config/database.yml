@@ -6,10 +6,10 @@ default: &default
 development:
   <<: *default
   adapter: sqlite3
-  database: db/development.sqlite3
+  database: db/trackday_v1_dev.sqlite3
 
   # adapter: postgresql
-  # database: app_postgres_development
+  # database: trackday_dev
   # host: localhost
   # port: 5433
   # username: apptest
@@ -18,15 +18,15 @@ development:
 test:
   <<: *default
   adapter: sqlite3
-  database: db/test.sqlite3
+  database: db/trackday_v1_test.sqlite3
 
   # adapter: postgresql
-  # database: app_postgres_test
+  # database: trackday_test
 
 production:
   <<: *default
   adapter: postgresql
-  database: app_postgres_production
-  username: app_postgres
+  database: trackday_v1_prod
+  username: trackday
   password: <%= ENV['APP_POSTGRES_DATABASE_PASSWORD'] %>
   # DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
