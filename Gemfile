@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # core
 ruby '2.6.6'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
 # API
