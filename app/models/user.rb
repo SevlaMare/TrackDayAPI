@@ -8,10 +8,10 @@ class User < ApplicationRecord
 
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
   validates :email,
-            presence: true,
+            presence: false,
             length: { in: 5..27 },
             uniqueness: { case_sensitive: false },
             format: { with: EMAIL_REGEX, on: :create }
 
-  validates :password, presence: true, length: { in: 5..27 }
+  validates :password, presence: false, length: { in: 5..27 }
 end
