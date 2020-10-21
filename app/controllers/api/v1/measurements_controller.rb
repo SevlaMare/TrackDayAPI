@@ -1,9 +1,6 @@
 class Api::V1::MeasurementsController < ApplicationController
   # before_action :require_login, only: %i[index create]
 
-  # TODO: current_user
-  current_user = User.first
-
   def index
     @measurements = current_user.measurements
 

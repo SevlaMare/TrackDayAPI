@@ -2,7 +2,8 @@ class Api::V1::SessionsController < ApplicationController
   # TODO token instead of cookie
 
   def current_user
-    current_user = User.find_by(id: cookies[:current_user_id])
+    # current_user = User.find_by(id: cookies[:current_user_id])
+    current_user = User.first
     current_user
   end
 
@@ -14,9 +15,9 @@ class Api::V1::SessionsController < ApplicationController
         value: userx.id, expires: Time.now + 7200
       }
 
-      render json: @users, status: :ok
+      
     else
-      render json: @users, status: :400
+      render json: @users, status: :bad_request
     end
   end
 end
