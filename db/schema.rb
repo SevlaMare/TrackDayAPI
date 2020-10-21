@@ -14,22 +14,15 @@ ActiveRecord::Schema.define(version: 2020_10_20_210930) do
 
   create_table "measurements", force: :cascade do |t|
     t.integer "value"
-    t.integer "metric_id"
+    t.integer "user_id"
     t.integer "measure_id"
     t.datetime "created_at", null: false
     t.index ["measure_id"], name: "index_measurements_on_measure_id"
-    t.index ["metric_id"], name: "index_measurements_on_metric_id"
+    t.index ["user_id"], name: "index_measurements_on_user_id"
   end
 
   create_table "measures", force: :cascade do |t|
     t.string "name"
-  end
-
-  create_table "metrics", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "measurement_id"
-    t.index ["measurement_id"], name: "index_metrics_on_measurement_id"
-    t.index ["user_id"], name: "index_metrics_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

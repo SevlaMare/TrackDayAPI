@@ -1,6 +1,6 @@
 class Measurement < ApplicationRecord
-  has_many :metrics
-  has_many :users, through: :metrics
+  belongs_to :user
+  belongs_to :measure
 
-  belongs_to :measures
+  validates :value, presence: true, length: { maximum: 12 }
 end

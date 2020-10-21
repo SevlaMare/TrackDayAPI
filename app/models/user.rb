@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  has_many :metrics # , dependent: :destroy
-  has_many :measurements, through: :metrics
+  has_many :measurements
 
   validates :name,
             presence: true,
