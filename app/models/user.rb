@@ -3,14 +3,14 @@ class User < ApplicationRecord
 
   has_many :measurements
 
-  validates :name,
+  validates :username,
             presence: true,
             uniqueness: true,
             length: { in: 3..12 }
 
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
   validates :email,
-            presence: false,
+            presence: true,
             length: { in: 5..27 },
             uniqueness: { case_sensitive: false },
             format: { with: EMAIL_REGEX, on: :create }
