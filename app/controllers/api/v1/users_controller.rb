@@ -15,6 +15,20 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  # restricted route
+  def show
+    @secret = Rails.application.secrets.secret_key_base
+    @token = request.headers['Authorization'].split(' ')[0]
+    @user_id = JWT.decode(@token, @secret, algorithm: 'HS256')[0]['user_id']
+
+    @user = User.find_by(id: @user_id)
+    if @user
+      render json: @user
+    else
+      render json: { error: 'Need login first'}, status: 401
+    end
+  end
+
   private
 
   def user_params
