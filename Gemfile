@@ -24,9 +24,6 @@ group :development do
   # traceback
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem 'binding_of_caller', '~> 0.8.0'
-
-  # debug
-  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :test do

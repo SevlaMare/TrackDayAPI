@@ -5,15 +5,10 @@ class User < ApplicationRecord
 
   validates :username,
             presence: true,
-            uniqueness: true,
+            uniqueness: { case_sensitive: false },
             length: { in: 3..12 }
 
-  EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
-  validates :email,
+  validates :password,
             presence: true,
-            length: { in: 5..27 },
-            uniqueness: { case_sensitive: false },
-            format: { with: EMAIL_REGEX, on: :create }
-
-  validates :password, presence: false, length: { in: 5..27 }
+            length: { in: 5..27 }
 end
