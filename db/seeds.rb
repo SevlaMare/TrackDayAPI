@@ -12,7 +12,7 @@
 end
 
 # Mock user
-User.create(name: 'test', email: 'test@email.com', password: 'test123')
+User.create(username: 'test', email: 'test@email.com', password_digest: 'test123')
 
 # Mock measurements
 User.first.measurements.create(value: 123, measure_id: 1)
