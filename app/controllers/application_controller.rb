@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::API
-  # TODO token instead of cookie
-
   def current_user
-    # current_user = User.find_by(id: cookies[:current_user_id])
-    current_user = User.first
+    current_user = User.find_by(id: cookies[:current_user_id])
+    # current_user = User.first
+
     current_user
   end
 

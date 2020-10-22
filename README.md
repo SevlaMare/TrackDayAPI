@@ -33,6 +33,11 @@ https://stock-catalogue.herokuapp.com/
 * [A modern web browser](https://www.google.com/chrome/)
 * [Node JS](https://nodejs.org/en/download/)
 
+## Possible improvements
+- Middle table for fast queries
+- Auth with JWT token
+- Includes admin
+
 ## Built With
 - Ruby and Ruby On Rails <br>
 - Postgres as database <br>

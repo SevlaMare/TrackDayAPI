@@ -1,25 +1,25 @@
 class Api::V1::UsersController < ApplicationController
-  # TODO: remove, test only
+  before_action :require_login, only: %i[show]
+
+  # for test only
   def index
     @users = User.all
 
     render json: @users, status: :ok
   end
 
-  # TODO: reject when not save, due validation
-  # POST request
+  # for test only
+  def show
+    render json: 'fine', status: :ok
+  end
+
+  # POST request for new user
   def create
     @user = User.new(user_params)
     @user.save
 
     render json: @user, status: :created
   end
-
-  # def show
-  #   @user = User.find(params[:id])
-
-  #   @measurements = @user.measurements
-  # end
 
   private
 

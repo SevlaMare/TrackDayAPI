@@ -1,5 +1,5 @@
 class Api::V1::MeasurementsController < ApplicationController
-  # before_action :require_login, only: %i[index create]
+  before_action :require_login, only: %i[index create]
 
   def index
     @measurements = current_user.measurements
@@ -16,6 +16,6 @@ class Api::V1::MeasurementsController < ApplicationController
   private
 
   def measurement_params
-    params.require(:measurement).permit(:name, :amount, :group_id)
+    params.require(:measurement).permit(:value, :measure_id)
   end
 end
