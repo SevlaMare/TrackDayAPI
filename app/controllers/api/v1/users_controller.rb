@@ -4,12 +4,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    secret = Rails.application.secrets.secret_key_base
-
+    @secret = Rails.application.secrets.secret_key_base
     @user = User.create(user_params)
+
     if @user.valid?
-      token = JWT.encode({ user_id: @user.id }, secret, 'HS256')
-      render json: { user: @user, token: token }
+      @token = JWT.encode({ user_id: @user.id }, @secret, 'HS256')
+      render json: { user: @user, token: @token }
     else
       render json: { error: 'Try other user/password' }, status: 401
     end
