@@ -25,7 +25,7 @@ class Api::V1::UsersController < ApplicationController
     if @user
       render json: @user
     else
-      render json: { error: 'Need login first'}, status: 401
+      render json: { error: 'Need login first' }, status: 401
     end
   end
 
