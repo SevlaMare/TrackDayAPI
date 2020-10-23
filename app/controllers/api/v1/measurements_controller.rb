@@ -16,8 +16,9 @@ class Api::V1::MeasurementsController < ApplicationController
 
     @current_user = User.find_by(id: @user_id)
     if @current_user
-      @body = request.raw_post
-      @measurement = @current_user.measurements.build(value: @body[0], measure_id: @body[1]) # @body[1] failing
+
+      @body = JSON.parse(request.raw_post)
+      @measurement = @current_user.measurements.build(value: @body['value'], measure_id: @body['measure_id']) # @body[1] failing
 
       if @measurement.save
         render json: { message: 'Measurement registered.' }, status: :ok
