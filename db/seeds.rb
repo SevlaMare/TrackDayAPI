@@ -12,7 +12,7 @@
 end
 
 # Mock user - ps field send as password and store as password_digest due bcrypt
-User.create(username: 'test', email: 'test@email.com', password: 'test123')
+User.create(username: 'asd123', email: 'test@email.com', password: 'asd123')
 
 # Mock measurements
 # User.first.measurements.create(value: 123, measure_id: 1)
