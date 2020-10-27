@@ -9,7 +9,7 @@ class Api::V1::MeasurementsController < ApplicationController
     if @current_user
       @measurements = @current_user.measurements
         .joins(:measure)
-        .select('name', 'value')
+        .select('name', 'value', 'created_at')
       render json: { data: @measurements }, status: :ok
     end
   end
