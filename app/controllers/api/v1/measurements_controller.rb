@@ -6,12 +6,13 @@ class Api::V1::MeasurementsController < ApplicationController
     @user_id = JWT.decode(@token, @secret, algorithm: 'HS256')[0]['user_id']
     @current_user = User.find_by(id: @user_id)
 
-    if @current_user
-      @measurements = @current_user.measurements
-        .joins(:measure)
-        .select('name', 'value', 'created_at')
-      render json: { data: @measurements }, status: :ok
-    end
+    return unless @current_user
+
+    @measurements = @current_user.measurements
+      .joins(:measure)
+      .select('name', 'value', 'created_at')
+
+    render json: { data: @measurements }, status: :ok
   end
 
   # restricted route
