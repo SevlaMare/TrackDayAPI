@@ -54,7 +54,7 @@ Header: Authorization Token <br>
 ## Requisites
 
 #### Install
-You will need install:
+You will need to install:
 * Ruby Language - Version 2.6 - [Install guide](https://www.ruby-lang.org/en/documentation/installation/)
 
 * Ruby on Rails - Version 5.2 - [Install guide](https://guides.rubyonrails.org/v5.0/getting_started.html#installing-rails)
@@ -65,7 +65,7 @@ Get a local copy, if you are using Git:
 ```
 git clone git@github.com:SevlaMare/TrackDayAPI.git
 ```
-Otherwise just hit (Download Zip) on green button (Code) at top of this page.
+Otherwise just hit (Download Zip) on the green button (Code) at top of this page.
 
 
 #### Setup
@@ -108,9 +108,9 @@ http://localhost:3000
 - Ruby and Ruby On Rails <br>
 - Postgres <br>
 - Rspec <br>
-- ESlint and Rubocop(Linters) <br>
+- ESlint and Rubocop (Linters) <br>
 - GitHub Actions (CI Tool) <br>
-- Heroku (Server and CD tool) <br>
+- Heroku (Server and CD Tool) <br>
 - Git, Github and VScode <br>
 
 
@@ -119,7 +119,7 @@ Contributions, issues and feature requests are welcome!<br>
 You can do it on [issues page](issues/).
 
 ### Acknowledgments
-A special thanks for the code reviewers.
+A special thanks to the code reviewers.
 
 ## Author
 👤 **Thiago Miranda**
