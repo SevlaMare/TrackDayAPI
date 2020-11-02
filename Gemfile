@@ -16,8 +16,8 @@ gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development do
-  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
   gem 'rubocop', '~> 0.93.1'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
   # traceback
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
