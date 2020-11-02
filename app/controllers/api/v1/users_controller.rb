@@ -1,8 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-  def index
-    render json: { hi: 'world' }
-  end
-
   def create
     @secret = Rails.application.secrets.secret_key_base
     @user = User.create(user_params)

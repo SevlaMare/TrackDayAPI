@@ -1,5 +1,4 @@
 class Api::V1::MeasurementsController < ApplicationController
-  # restricted route
   def index
     @secret = Rails.application.secrets.secret_key_base
     @token = request.headers['Authorization'].split(' ')[0]
@@ -12,10 +11,13 @@ class Api::V1::MeasurementsController < ApplicationController
       .joins(:measure)
       .select('name', 'value', 'created_at')
 
-    render json: { data: @measurements }, status: :ok
+    if @measurements.exists?
+      render json: { data: @measurements }, status: :ok
+    else
+      render json: { data: 0 }, status: :ok
+    end
   end
 
-  # restricted route
   def create
     @secret = Rails.application.secrets.secret_key_base
     @token = request.headers['Authorization'].split(' ')[0]
