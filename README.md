@@ -54,16 +54,16 @@ Header: Authorization Token <br>
 ## Requisites
 
 #### Install
-To use this program, you will need install:
+You will need install:
 * Ruby Language - Version 2.6 - [Install guide](https://www.ruby-lang.org/en/documentation/installation/)
 
 * Ruby on Rails - Version 5.2 - [Install guide](https://guides.rubyonrails.org/v5.0/getting_started.html#installing-rails)
 
 
 #### Get a local copy
-Now you need a copy of this application, if you are using Git:
+Get a local copy, if you are using Git:
 ```
-git clone git@github.com:SevlaMare/wallet.git
+git clone git@github.com:SevlaMare/TrackDayAPI.git
 ```
 Otherwise just hit (Download Zip) on green button (Code) at top of this page.
 
