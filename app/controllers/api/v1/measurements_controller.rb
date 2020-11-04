@@ -2,7 +2,7 @@ class Api::V1::MeasurementsController < ApplicationController
   def index
     @secret = Rails.application.secrets.secret_key_base
     @token = request.headers['Authorization'].split(' ')[0]
-    @user_id = JWT.decode(@token, @secret, algorithm: 'HS256')[0]['user_id']
+    @user_id = JWT.decode(@token, @secret, verify: true, algorithm: 'HS256')[0]['user_id']
     @current_user = User.find_by(id: @user_id)
 
     return unless @current_user
