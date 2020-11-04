@@ -2,9 +2,12 @@ class Api::V1::MeasurementsController < ApplicationController
   def index
     @secret = Rails.application.secret_key_base
     @token = request.headers['Authorization'].split(' ')[0]
-    @user_id = JWT.decode(@token, @secret, verify: true, algorithm: 'HS256')[0]['user_id']
-    @current_user = User.find_by(id: @user_id)
 
+    # TODO: check arg { algorithm: 'HS256' } or slice?
+    # verify arg, will check if decrypt algorithm is the correct
+    @user_id = JWT.decode(@token, @secret, verify: true, algorithm: 'HS256')[0]['user_id']
+
+    @current_user = User.find_by(id: @user_id)
     return unless @current_user
 
     @measurements = @current_user.measurements
@@ -19,9 +22,9 @@ class Api::V1::MeasurementsController < ApplicationController
   end
 
   def create
-    @secret = Rails.application.secrets.secret_key_base
+    @secret = Rails.application.secret_key_base
     @token = request.headers['Authorization'].split(' ')[0]
-    @user_id = JWT.decode(@token, @secret, algorithm: 'HS256')[0]['user_id']
+    @user_id = JWT.decode(@token, @secret, true, algorithm: 'HS256')[0]['user_id'] # status 500
     @current_user = User.find_by(id: @user_id)
 
     if @current_user
