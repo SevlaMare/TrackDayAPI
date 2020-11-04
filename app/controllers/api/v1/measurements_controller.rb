@@ -24,7 +24,11 @@ class Api::V1::MeasurementsController < ApplicationController
   def create
     @secret = Rails.application.secret_key_base
     @token = request.headers['Authorization'].split(' ')[0]
+    puts('wat token', @token)
+
     @user_id = JWT.decode(@token, @secret, true, algorithm: 'HS256')[0]['user_id'] # status 500
+    puts('wat token', @user_id)
+
     @current_user = User.find_by(id: @user_id)
 
     if @current_user
