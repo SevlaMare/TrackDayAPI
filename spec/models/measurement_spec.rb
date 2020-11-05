@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Measurement, type: :model do
-  # it { should belong_to(:user) }
-  # it { should belong_to(:measure) }
-
   let(:measurement) { Measurement.new }
   let(:user1) { User.create(username: 'abc123', password: 'abc123') }
   let(:measure1) { Measure.create(name: 'test123') }
