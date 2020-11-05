@@ -3,8 +3,7 @@ class Api::V1::MeasurementsController < ApplicationController
     @secret = Rails.application.secret_key_base
     @token = request.headers['Authorization'].split(' ')[0]
 
-    # TODO: check arg { algorithm: 'HS256' } or slice?
-    # verify arg, will check if decrypt algorithm is the correct
+    # verify arg, will check if decrypt algorithm is correct
     @user_id = JWT.decode(@token, @secret, verify: true, algorithm: 'HS256')[0]['user_id']
 
     @current_user = User.find_by(id: @user_id)
@@ -23,11 +22,10 @@ class Api::V1::MeasurementsController < ApplicationController
 
   def create
     @secret = Rails.application.secret_key_base
-    @token = request.headers['Authorization'].split(' ')[0]
-    puts('wat token', @token)
+    @token = request.headers['Authorization'].split(' ')[0] # slice to retrieve only token from request
 
-    @user_id = JWT.decode(@token, @secret, true, algorithm: 'HS256')[0]['user_id'] # status 500
-    puts('wat token', @user_id)
+    # decrypt and parse token to get user_id
+    @user_id = JWT.decode(@token, @secret, true, algorithm: 'HS256')[0]['user_id']
 
     @current_user = User.find_by(id: @user_id)
 
