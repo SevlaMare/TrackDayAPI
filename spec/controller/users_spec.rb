@@ -3,11 +3,13 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   it 'create a user' do
     post :create, params: { username: 'asd123', password: '123456' }
+
     expect(response).to have_http_status(200)
   end
 
   it 'unauthorized' do
     post :create, params: { username: 'zx', password: '123456' }
+
     expect(response).to have_http_status(401)
   end
 
