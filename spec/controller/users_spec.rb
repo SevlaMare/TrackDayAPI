@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
-  let(:user1) { User.create(username: 'user01') }
-
   it 'create a user' do
     post :create, params: { username: 'asd123', password: '123456' }
     expect(response).to have_http_status(200)
