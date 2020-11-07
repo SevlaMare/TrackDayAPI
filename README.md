@@ -3,6 +3,8 @@
 
 ![screenshot](doc/ERD.png)
 
+A project made to practice all core concepts of building APIs, such as having endpoints, authorization with tokens and tests
+
 <br>A full-featured API.<br>
 
 
