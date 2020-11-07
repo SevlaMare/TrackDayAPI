@@ -3,7 +3,7 @@
 
 ![screenshot](doc/ERD.png)
 
-<br>A full featured API.<br>
+<br>A full-featured API.<br>
 
 
 ## Content
@@ -25,11 +25,11 @@ https://trackday-api.herokuapp.com/api/v1/
 
 
 #### End Points
-* Create account and receive token<br>
+* Create an account and receive a token<br>
 /users<br>
 POST, params: username, password
 
-* Login and receive token<br>
+* Log in and receive a token<br>
 /sessions<br>
 POST, params: username, password
 
@@ -95,7 +95,7 @@ rspec
 rails server
 ```
 
-Now is available on browser <br>
+Now is available on the browser <br>
 http://localhost:3000
 
 
