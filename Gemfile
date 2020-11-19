@@ -3,29 +3,25 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # core
 ruby '2.6.6'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 
 # API
-gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt', '~> 2.2', '>= 2.2.2'
-# gem 'jbuilder', '~> 2.5'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 
 # cache
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development do
-  # linter
   gem 'rubocop', '~> 0.93.1'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
   # traceback
-  gem 'binding_of_caller', '~> 0.8.0'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
-
-  # debug
-  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'binding_of_caller', '~> 0.8.0'
 end
 
 group :test do
@@ -39,4 +35,4 @@ group :test do
 end
 
 # Windows
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
